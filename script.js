@@ -1,4 +1,5 @@
 let gridContainer = document.querySelector('.grid-container');
+let resetButton = document.querySelector('.reset');
 
 for (let i = 0; i < 16; i++) {
     let rowDiv = document.createElement('div');
@@ -16,6 +17,16 @@ let gridBlocks = document.querySelectorAll('.block');
 
 gridBlocks.forEach(block => block.addEventListener('mouseover', colorGrid));
 
-function colorGrid (e) {
+resetButton.addEventListener('click', () => {
+    reset(gridBlocks);
+});
+
+function colorGrid(e) {
     this.style.backgroundColor = "black";
+}
+
+function reset(item) {
+    for (let i = 0; i < item.length; i++) {
+        item[i].style.backgroundColor = "white";
+    }
 }
