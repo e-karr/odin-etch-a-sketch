@@ -1,12 +1,14 @@
 let gridContainer = document.querySelector('.grid-container');
 let resetButton = document.querySelector('.reset');
 
-for (let i = 0; i < 16; i++) {
+for (let i = 0; i < 25; i++) {
     let rowDiv = document.createElement('div');
     rowDiv.setAttribute('style', 'display: flex');
-    for (let j = 0; j < 16; j++) {
+    for (let j = 0; j < 25; j++) {
         let block = document.createElement('div');
-        block.setAttribute('style', 'border: 1px solid grey; height: 20px; width: 20px;');
+        block.setAttribute('style', 'border: 1px solid grey;');
+        block.style.height = ((gridContainer.clientHeight / 25) - 2) + "px";
+        block.style.width = ((gridContainer.clientWidth / 25) - 2) + "px";
         block.classList.add('block');
         rowDiv.appendChild(block);
     }
