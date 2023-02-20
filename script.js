@@ -11,3 +11,11 @@ for (let i = 0; i < 16; i++) {
     }
     gridContainer.appendChild(rowDiv);
 }
+
+let gridBlocks = document.querySelectorAll('.block');
+
+gridBlocks.forEach(block => block.addEventListener('mouseover', colorGrid));
+
+function colorGrid (e) {
+    this.style.backgroundColor = "black";
+}
