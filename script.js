@@ -5,7 +5,8 @@ for (let i = 0; i < 16; i++) {
     rowDiv.setAttribute('style', 'display: flex');
     for (let j = 0; j < 16; j++) {
         let block = document.createElement('div');
-        block.setAttribute('style', 'border: 1px solid grey; height: 10px; width: 10px;');
+        block.setAttribute('style', 'border: 1px solid grey; height: 20px; width: 20px;');
+        block.classList.add('block');
         rowDiv.appendChild(block);
     }
     gridContainer.appendChild(rowDiv);
