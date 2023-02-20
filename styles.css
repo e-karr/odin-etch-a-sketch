@@ -1,4 +1,5 @@
 .grid-container {
     border: 1px solid black;
-    width: max-content;
+    width: 600px;
+    height: 600px;
 }
