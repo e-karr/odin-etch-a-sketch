@@ -42,6 +42,10 @@ body {
         width: 325px;
         height: 325px;
     }
+
+    footer {
+        font-size: 2vw;
+    }
 }
 
 @media screen and (max-width: 350px) {
