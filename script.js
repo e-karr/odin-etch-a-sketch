@@ -11,7 +11,13 @@ gridSizeButtons.forEach(button => button.addEventListener('click', () => {
     for (let i = 0; i < rows.length; i++) {
         gridContainer.removeChild(rows[i]);
     }
-    
+
+    for (let i = 0; i < gridSizeButtons.length; i++) {
+        gridSizeButtons[i].classList.remove('selected');
+    }
+
+    button.classList.add('selected');
+
     createGrid(button.value);
 }));
 

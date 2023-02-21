@@ -17,6 +17,7 @@ p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.5vw;
 }
+
 .customize-buttons {
     display: flex;
     justify-content: center;
@@ -32,6 +33,11 @@ p {
     font-size: 1.5vw;
     background-color: azure;
 }
+
+.selected {
+    border-color: #ffc600;
+    box-shadow: 0 0 1rem #ff2f00;
+  }
 
 .sketch-container {
     display: flex;
