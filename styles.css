@@ -18,7 +18,7 @@ body {
     flex-direction: column;
     background-color: red;
     align-self: center;
-    padding: 3vw;
+    padding: 2vw 4vw;
     border-radius: 4vw;
 }
 
@@ -53,6 +53,16 @@ body {
 
 .sketch-footer {
     display: flex;
+    justify-content: space-between;
+    margin-top: 1vw;
+    /* border: 1px solid black; */
+}
+
+.dial {
+    border-radius: 50%;
+    width: 5vw;
+    height: 5vw;
+    background-color: lightgrey;
 }
 
 footer {
