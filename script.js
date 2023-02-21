@@ -1,6 +1,7 @@
 let gridContainer = document.querySelector('.grid-container');
 let resetButton = document.querySelector('.reset');
 let gridSizeButtons = document.querySelectorAll('.grid-size');
+let colorButtons = document.querySelectorAll('.color');
 let gridSize = 15;
 
 createGrid(gridSize);
@@ -19,6 +20,15 @@ gridSizeButtons.forEach(button => button.addEventListener('click', () => {
     button.classList.add('selected');
 
     createGrid(button.value);
+}));
+
+colorButtons.forEach(button => button.addEventListener('click', () => {
+    
+    for (let i = 0; i < colorButtons.length; i++) {
+        colorButtons[i].classList.remove('selected');
+    }
+
+    button.classList.add('selected');
 }));
 
 function createColoring(blocks) {

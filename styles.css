@@ -18,14 +18,14 @@ p {
     font-size: 1.5vw;
 }
 
-.customize-buttons {
+.size-buttons, .color-buttons {
+    gap: 3vw;
     display: flex;
     justify-content: center;
-    gap: 3vw;
     margin-bottom: 2vw;
 }
 
-.grid-size {
+.grid-size, .color {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 1vw 2vw;
     border: none;
