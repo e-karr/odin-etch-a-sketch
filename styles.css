@@ -1,11 +1,26 @@
 body {
-    size: 100vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
 }
+
+/* header, body div, footer {
+    border: 1px solid red;
+} */
 
 .grid-container {
     border: 1px solid black;
     width: 600px;
     height: 600px;
+}
+
+.sketch-container {
+    display: flex;
+    justify-content: center;
+    background-color: red;
 }
 
 @media screen and (max-width: 500px) {

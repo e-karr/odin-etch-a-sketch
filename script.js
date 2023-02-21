@@ -41,7 +41,7 @@ function makeBlocks(size) {
         rowDiv.setAttribute('style', 'display: flex');
         for (let j = 0; j < size; j++) {
             let block = document.createElement('div');
-            block.setAttribute('style', 'border: 1px solid grey;');
+            block.setAttribute('style', 'border: 1px solid grey; background-color: white');
             block.style.height = ((gridContainer.clientHeight / size) - 2) + "px";
             block.style.width = ((gridContainer.clientWidth / size) - 2) + "px";
             block.classList.add('block');
