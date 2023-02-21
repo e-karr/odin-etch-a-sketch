@@ -23,6 +23,8 @@ gridSizeButtons.forEach(button => button.addEventListener('click', () => {
 
     button.classList.add('selected');
 
+    blackButton.click();
+
     createGrid(button.value);
 }));
 
