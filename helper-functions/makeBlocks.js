@@ -1,4 +1,4 @@
-function makeBlocks(size) {
+export function makeBlocks(size) {
     for (let i = 0; i < size; i++) {
         let rowDiv = document.createElement('div');
         rowDiv.classList.add('row');
@@ -14,5 +14,3 @@ function makeBlocks(size) {
         gridContainer.appendChild(rowDiv);
     }
 }
-
-module.exports = makeBlocks;

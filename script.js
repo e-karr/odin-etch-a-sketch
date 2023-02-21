@@ -1,4 +1,6 @@
-// const makeBlocks = require('./helper-functions/makeBlocks.js');
+import { makeBlocks } from "./helper-functions/makeBlocks";
+
+import { randomInteger, randomRgbColor } from "./helper-functions/randomColor";
 
 let gridContainer = document.querySelector('.grid-container');
 let resetButton = document.querySelector('.reset');

@@ -10,7 +10,4 @@ function randomRgbColor() {
     return `rgb(${r}, ${g}, ${b})`;
 }
 
-module.exports = {
-    randomInteger: randomInteger,
-    randomRgbColor: randomRgbColor
-};
+export {randomInteger, randomRgbColor};
