@@ -1,5 +1,11 @@
 let gridContainer = document.querySelector('.grid-container');
 let resetButton = document.querySelector('.reset');
+let promptButton = document.querySelector('.grid-size');
+let gridSize = 0;
+
+promptButton.addEventListener('click', () => {
+    gridSize = Number(prompt("How many squares per side?"));
+});
 
 for (let i = 0; i < 25; i++) {
     let rowDiv = document.createElement('div');
