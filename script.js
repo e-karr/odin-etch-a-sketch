@@ -1,24 +1,19 @@
 let gridContainer = document.querySelector('.grid-container');
 let resetButton = document.querySelector('.reset');
-let promptButton = document.querySelector('.grid-size');
-let gridSize = 16;
+let gridSizeButtons = document.querySelectorAll('.grid-size');
+let gridSize = 15;
 
 createGrid(gridSize);
 
-promptButton.addEventListener('click', () => {
-    gridSize = Number(prompt("How many squares per side?"));
-
-    while (gridSize < 1 || gridSize > 100 || !Number.isInteger(gridSize)) {
-        gridSize = Number(prompt("Invalid input. Please enter a number between 1-100. How many squares per side?"));
-    }
+gridSizeButtons.forEach(button => button.addEventListener('click', () => {
 
     let rows = document.querySelectorAll('.row');
     for (let i = 0; i < rows.length; i++) {
         gridContainer.removeChild(rows[i]);
     }
-
-    createGrid(gridSize);
-});
+    
+    createGrid(button.value);
+}));
 
 function createColoring(blocks) {
     blocks.forEach(block => block.addEventListener('mouseover', changeBackground));
