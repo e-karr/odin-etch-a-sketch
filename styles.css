@@ -63,6 +63,19 @@ body {
     width: 5vw;
     height: 5vw;
     background-color: lightgrey;
+    border-style: outset;
+}
+
+.reset {
+    align-self: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 1vw 2vw;
+    border: none;
+    border-radius: 1vw;
+    color: black;
+    font-size: 1.5vw;
+    background-color: azure;
+    border-style: outset;
 }
 
 footer {
