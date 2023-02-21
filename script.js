@@ -2,6 +2,8 @@ let gridContainer = document.querySelector('.grid-container');
 let resetButton = document.querySelector('.reset');
 let gridSizeButtons = document.querySelectorAll('.grid-size');
 let colorButtons = document.querySelectorAll('.color');
+let blackButton = document.querySelector('#black');
+let rainbowButton = document.querySelector('#rainbow');
 let gridSize = 15;
 
 createGrid(gridSize);
@@ -31,12 +33,19 @@ colorButtons.forEach(button => button.addEventListener('click', () => {
     button.classList.add('selected');
 }));
 
-function createColoring(blocks) {
-    blocks.forEach(block => block.addEventListener('mouseover', changeBackground));
-}
+rainbowButton.addEventListener('click', () => {
+    let gridBlocks = document.querySelectorAll('.block');
 
-function changeBackground(e) {
-    this.style.backgroundColor = "black";
+    gridBlocks.forEach(block => block.addEventListener('mouseover', () => {
+        let randomColor = randomRgbColor();
+        block.style.backgroundColor = randomColor;
+    }))
+});
+
+function createColoring(blocks, color="black") {
+    blocks.forEach(block => block.addEventListener('mouseover', () => {
+        block.style.backgroundColor = color;
+    }));
 }
 
 function resetGrid(item) {
@@ -72,4 +81,16 @@ function createGrid(size) {
     resetButton.addEventListener('click', () => {
         resetGrid(gridBlocks);
     });
+}
+
+function randomInteger(max) {
+    return Math.floor(Math.random() * (max + 1));
+}
+
+function randomRgbColor() {
+    let r = randomInteger(255);
+    let g = randomInteger(255);
+    let b = randomInteger(255);
+
+    return `rgb(${r}, ${g}, ${b})`;
 }
