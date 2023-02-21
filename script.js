@@ -1,5 +1,3 @@
-// const makeBlocks = require('./helper-functions/makeBlocks.js');
-
 let gridContainer = document.querySelector('.grid-container');
 let resetButton = document.querySelector('.reset');
 let gridSizeButtons = document.querySelectorAll('.grid-size');
@@ -43,7 +41,12 @@ rainbowButton.addEventListener('click', () => {
     gridBlocks.forEach(block => block.addEventListener('mouseover', () => {
         let randomColor = randomRgbColor();
         block.style.backgroundColor = randomColor;
-    }))
+    }));
+
+    gridBlocks.forEach(block => block.addEventListener('touchmove', () => {
+        let randomColor = randomRgbColor();
+        block.style.backgroundColor = randomColor;
+    }));
 });
 
 blackButton.addEventListener('click', () => {
@@ -53,6 +56,10 @@ blackButton.addEventListener('click', () => {
 
 function createColoring(blocks, color="black") {
     blocks.forEach(block => block.addEventListener('mouseover', () => {
+        block.style.backgroundColor = color;
+    }));
+
+    blocks.forEach(block => block.addEventListener('touchmove', () => {
         block.style.backgroundColor = color;
     }));
 }
