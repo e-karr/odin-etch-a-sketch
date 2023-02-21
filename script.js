@@ -1,3 +1,5 @@
+// const makeBlocks = require('./helper-functions/makeBlocks.js');
+
 let gridContainer = document.querySelector('.grid-container');
 let resetButton = document.querySelector('.reset');
 let gridSizeButtons = document.querySelectorAll('.grid-size');
@@ -40,6 +42,11 @@ rainbowButton.addEventListener('click', () => {
         let randomColor = randomRgbColor();
         block.style.backgroundColor = randomColor;
     }))
+});
+
+blackButton.addEventListener('click', () => {
+    let gridBlocks = document.querySelectorAll('.block');
+    createColoring(gridBlocks);
 });
 
 function createColoring(blocks, color="black") {
