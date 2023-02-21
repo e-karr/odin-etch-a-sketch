@@ -13,20 +13,23 @@ body {
 
 .grid-container {
     border: 1px solid black;
-    width: 600px;
-    height: 600px;
+    width: 550px;
+    height: 550px;
 }
 
 .sketch-container {
     display: flex;
     justify-content: center;
     background-color: red;
+    align-self: center;
+    padding: 3vw;
+    border-radius: 4vw;
 }
 
 @media screen and (max-width: 500px) {
     .grid-container {
-        width: 350px;
-        height: 350px;
+        width: 325px;
+        height: 325px;
     }
 }
 
