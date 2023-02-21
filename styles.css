@@ -50,3 +50,12 @@ body {
         height: 250px;
     }
 }
+
+.sketch-footer {
+    display: flex;
+}
+
+footer {
+    color: white;
+    text-align: center;
+}
