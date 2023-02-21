@@ -5,6 +5,10 @@ let gridSize = 16;
 
 createGrid(gridSize);
 
+let gridBlocks = document.querySelectorAll('.block');
+
+createColoring(gridBlocks);
+
 promptButton.addEventListener('click', () => {
     gridSize = Number(prompt("How many squares per side?"));
 
@@ -16,12 +20,20 @@ promptButton.addEventListener('click', () => {
     for (let i = 0; i < rows.length; i++) {
         gridContainer.removeChild(rows[i]);
     }
+
     createGrid(gridSize);
+
+    let grid = document.querySelectorAll('.block');
+    createColoring(grid);
+
+    resetButton.addEventListener('click', () => {
+        reset(grid);
+    });
 });
 
-let gridBlocks = document.querySelectorAll('.block');
-
-gridBlocks.forEach(block => block.addEventListener('mouseover', colorGrid));
+function createColoring(blocks) {
+    blocks.forEach(block => block.addEventListener('mouseover', colorGrid));
+}
 
 resetButton.addEventListener('click', () => {
     reset(gridBlocks);
