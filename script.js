@@ -5,10 +5,6 @@ let gridSize = 16;
 
 createGrid(gridSize);
 
-let gridBlocks = document.querySelectorAll('.block');
-
-createColoring(gridBlocks);
-
 promptButton.addEventListener('click', () => {
     gridSize = Number(prompt("How many squares per side?"));
 
@@ -22,34 +18,23 @@ promptButton.addEventListener('click', () => {
     }
 
     createGrid(gridSize);
-
-    let grid = document.querySelectorAll('.block');
-    createColoring(grid);
-
-    resetButton.addEventListener('click', () => {
-        reset(grid);
-    });
 });
 
 function createColoring(blocks) {
-    blocks.forEach(block => block.addEventListener('mouseover', colorGrid));
+    blocks.forEach(block => block.addEventListener('mouseover', changeBackground));
 }
 
-resetButton.addEventListener('click', () => {
-    reset(gridBlocks);
-});
-
-function colorGrid(e) {
+function changeBackground(e) {
     this.style.backgroundColor = "black";
 }
 
-function reset(item) {
+function resetGrid(item) {
     for (let i = 0; i < item.length; i++) {
         item[i].style.backgroundColor = "white";
     }
 }
 
-function createGrid(size) {
+function makeBlocks(size) {
     for (let i = 0; i < size; i++) {
         let rowDiv = document.createElement('div');
         rowDiv.classList.add('row');
@@ -64,4 +49,16 @@ function createGrid(size) {
         }
         gridContainer.appendChild(rowDiv);
     }
+}
+
+function createGrid(size) {
+    makeBlocks(size);
+
+    let gridBlocks = document.querySelectorAll('.block');
+
+    createColoring(gridBlocks);
+
+    resetButton.addEventListener('click', () => {
+        resetGrid(gridBlocks);
+    });
 }
