@@ -43,7 +43,7 @@ rainbowButton.addEventListener('click', () => {
         block.style.backgroundColor = randomColor;
     }));
 
-    gridBlocks.forEach(block => block.addEventListener('touchmove', () => {
+    gridBlocks.forEach(block => block.addEventListener('touchstart', () => {
         let randomColor = randomRgbColor();
         block.style.backgroundColor = randomColor;
     }));
@@ -59,7 +59,7 @@ function createColoring(blocks, color="black") {
         block.style.backgroundColor = color;
     }));
 
-    blocks.forEach(block => block.addEventListener('touchmove', () => {
+    blocks.forEach(block => block.addEventListener('touchstart', () => {
         block.style.backgroundColor = color;
     }));
 }
