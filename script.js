@@ -67,6 +67,10 @@ function createColoring(blocks, color="black") {
     blocks.forEach(block => block.addEventListener('touchstart', () => {
         block.style.backgroundColor = color;
     }));
+
+    blocks.forEach(block => block.addEventListener('touchmove', () => {
+        block.style.backgroundColor = color;
+    }));
 }
 
 function resetGrid(item) {
