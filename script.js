@@ -47,6 +47,11 @@ rainbowButton.addEventListener('click', () => {
         let randomColor = randomRgbColor();
         block.style.backgroundColor = randomColor;
     }));
+
+    gridBlocks.forEach(block => block.addEventListener('touchmove', () => {
+        let randomColor = randomRgbColor();
+        block.style.backgroundColor = randomColor;
+    }));
 });
 
 blackButton.addEventListener('click', () => {
