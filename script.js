@@ -6,7 +6,7 @@ let blackButton = document.querySelector('#black');
 let rainbowButton = document.querySelector('#rainbow');
 let gridSize = 15;
 
-createGrid(gridSize);
+window.addEventListener('load', () => createGrid(gridSize));
 
 gridSizeButtons.forEach(button => button.addEventListener('click', () => {
 
@@ -36,40 +36,21 @@ colorButtons.forEach(button => button.addEventListener('click', () => {
 }));
 
 rainbowButton.addEventListener('click', () => {
-    let gridBlocks = document.querySelectorAll('.block');
-
-    gridBlocks.forEach(block => block.addEventListener('mouseover', () => {
-        let randomColor = randomRgbColor();
-        block.style.backgroundColor = randomColor;
-    }));
-
-    gridBlocks.forEach(block => block.addEventListener('touchstart', () => {
-        let randomColor = randomRgbColor();
-        block.style.backgroundColor = randomColor;
-    }));
-
-    gridBlocks.forEach(block => block.addEventListener('touchmove', () => {
-        let randomColor = randomRgbColor();
-        block.style.backgroundColor = randomColor;
-    }));
+    createColoring('rainbow');
 });
 
 blackButton.addEventListener('click', () => {
-    let gridBlocks = document.querySelectorAll('.block');
-    createColoring(gridBlocks);
+    createColoring('black');
 });
 
-function createColoring(blocks, color="black") {
-    blocks.forEach(block => block.addEventListener('mouseover', () => {
-        block.style.backgroundColor = color;
-    }));
-
-    blocks.forEach(block => block.addEventListener('touchstart', () => {
-        block.style.backgroundColor = color;
-    }));
-
-    blocks.forEach(block => block.addEventListener('touchmove', () => {
-        block.style.backgroundColor = color;
+function createColoring(color) {
+    let gridBlocks = document.querySelectorAll('.block');
+    gridBlocks.forEach(block => block.addEventListener('mouseover', () => {
+        if (color === 'black') {
+            block.style.backgroundColor = color;
+        } else {
+            block.style.backgroundColor = randomRgbColor();
+        }
     }));
 }
 
@@ -101,7 +82,7 @@ function createGrid(size) {
 
     let gridBlocks = document.querySelectorAll('.block');
 
-    createColoring(gridBlocks);
+    createColoring('black');
 
     resetButton.addEventListener('click', () => {
         resetGrid(gridBlocks);
