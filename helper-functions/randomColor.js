@@ -1,16 +1,16 @@
 function randomInteger(max) {
-    return Math.floor(Math.random() * (max + 1));
+  return Math.floor(Math.random() * (max + 1));
 }
 
 function randomRgbColor() {
-    let r = randomInteger(255);
-    let g = randomInteger(255);
-    let b = randomInteger(255);
+  const r = randomInteger(255);
+  const g = randomInteger(255);
+  const b = randomInteger(255);
 
-    return `rgb(${r}, ${g}, ${b})`;
+  return `rgb(${r}, ${g}, ${b})`;
 }
 
 module.exports = {
-    randomInteger: randomInteger,
-    randomRgbColor: randomRgbColor
+  randomInteger,
+  randomRgbColor,
 };
